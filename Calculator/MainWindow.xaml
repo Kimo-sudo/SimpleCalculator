@@ -1,0 +1,74 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d" FontSize="25"
+        KeyDown="Window_KeyDown" 
+        Title="Mark's Calculator" Height="350" Width="350">
+    <Grid>
+        <!--#region  Setting the grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--#endregion-->
+        <TextBox x:Name="display"
+                 IsReadOnly="True"
+                 Grid.Column="0" Grid.Row="1"
+                 Grid.ColumnSpan="4" Grid.RowSpan="1"
+                 TextAlignment="Right" 
+                 Text="{Binding BoundNumber, Mode=TwoWay}"/>
+        <TextBox x:Name="error"
+                  Grid.Column="0" Grid.Row="0"
+                 IsReadOnly="True"
+                  Grid.ColumnSpan="4" Grid.RowSpan="1"
+                  TextAlignment="Center" 
+                  Text="" FontSize="18" 
+                   Foreground="Red"
+                   FontWeight="Bold" Padding="10 10"/>
+                   
+        
+        <!--#region  Button -->
+        
+        <!-- Numbers -->
+        <Button Content="1" x:Name="button1" Grid.Column="0" Grid.Row="5" Click="button_Click" />
+        <Button Content="2" x:Name="button2" Grid.Column="1" Grid.Row="5" Click="button_Click" />
+        <Button Content="3" x:Name="button3" Grid.Column="2" Grid.Row="5" Click="button_Click" />
+        <Button Content="4" x:Name="button4" Grid.Column="0" Grid.Row="4" Click="button_Click" />
+        <Button Content="5" x:Name="button5" Grid.Column="1" Grid.Row="4" Click="button_Click" />
+        <Button Content="6" x:Name="button6" Grid.Column="2" Grid.Row="4" Click="button_Click" />
+        <Button Content="7" x:Name="button7" Grid.Column="0" Grid.Row="3" Click="button_Click" />
+        <Button Content="8" x:Name="button8" Grid.Column="1" Grid.Row="3" Click="button_Click" />
+        <Button Content="9" x:Name="button9" Grid.Column="2" Grid.Row="3" Click="button_Click" />
+        <Button Content="0" x:Name="button0" Grid.Column="1" Grid.Row="6" Click="button_Click" />
+        <Button Content="," x:Name="buttonComma" Grid.Column="2" Grid.Row="6" Click="button_Click" />
+        
+        <!-- Functions -->
+        
+        
+        <Button Content="CE" x:Name="ClearEverything" Grid.Column="1" Grid.Row="2" Click="ClearEverything_Click"/>
+        <Button Content="C" x:Name="Return" Grid.Column="2" Grid.Row="2" Click="Return_Click"/>
+
+        <Button Content="=" x:Name="RunButton" Grid.Column="3" Grid.Row="6" Click="RunButton_Click"/>
+        
+        <Button Content="-" x:Name="MinusButton" Grid.Column="3" Grid.Row="5" Click="MinusButton_Click_1"/>
+        <Button Content="+" x:Name="PlusButton" Grid.Column="3" Grid.Row="4" Click="PlusButton_Click"/>
+        <Button Content="*" x:Name="MultiplyButton" Grid.Column="3" Grid.Row="3" Click="MultiplyButton_Click"/>
+        <Button Content="/" x:Name="DivideButton" Grid.Column="3" Grid.Row="2" Click="DivideButton_Click"/>
+
+        <!--#endregion-->
+    </Grid>
+</Window>
